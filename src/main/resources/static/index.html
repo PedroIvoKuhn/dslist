@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minha Página</title>
+</head>
+<body>
+    <h1>Minha Lista</h1>
+    <ul id="minhaLista">
+        <!-- Os itens da lista serão inseridos aqui pelo JavaScript -->
+    </ul>
+
+    <script>
+        fetch('http://localhost:8080/games')
+            .then(response => response.json())
+            .then(data => {
+                let lista = document.getElementById('minhaLista');
+                data.forEach(item => {
+                    lista.insertAdjacentHTML('beforeend', `<li><a href="/pages/GameDetails.html?id=${item.id}">${item.title}</a></li>`);
+                });
+            })
+            .catch(error => console.error('Erro:', error));
+    </script>
+</body>
+</html>
