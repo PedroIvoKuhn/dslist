@@ -15,11 +15,11 @@ window.onload = function(){
                     a.textContent = item.title;
                     a.href = `/pages/GameDetails.html?id=${item.id}`;
                     a.style.textDecoration = 'none';
+                    a.style.color = 'black';
                     div.style.display = 'flex';
                     div.style.alignItems = 'center';
                     div.style.justifyContent = 'space-between';
                     div.style.margin = '10px';
-
                     div.appendChild(a);
                 li.appendChild(div);
                 lista.appendChild(li);
